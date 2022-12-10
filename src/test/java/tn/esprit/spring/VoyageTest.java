@@ -50,4 +50,13 @@ public class VoyageTest {
         System.out.println("1");
         assertEquals(voyage1.getIdVoyage(),1);
     }
+
+    @Test
+    public void testaddProduit(){
+        Mockito.when(voyageRepository.save(v1)).thenReturn(v1);
+        voyageService.ajouterVoyage(v1);
+        //assertNotNull(produit1);
+        Mockito.verify(voyageRepository, times(1)).save(Mockito.any(Voyage.class));
+        System.out.println("3");
+    }
 }
