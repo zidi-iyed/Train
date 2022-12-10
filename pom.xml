@@ -43,6 +43,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -52,10 +61,6 @@
 			<id>deploymentRepo</id>
 			<url>http://192.168.1.26:8081/repository/maven-releases/</url>
 		</repository>
-		<snapshotRepository>
-			<id>deploymentRepo</id>
-			<url>http://192.168.1.26:8081/repository/maven-snapshots/</url>
-		</snapshotRepository>
 	</distributionManagement>
 
 </project>
