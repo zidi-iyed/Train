@@ -102,7 +102,7 @@ public class TrainServiceImpl implements ITrainService {
         Optional<Voyageur> value = Optional.of(VoyageurRepository.findById(idVoyageur).get());
         if (value.isPresent()) {
             Voyageur c = VoyageurRepository.findById(idVoyageur).get();
-        }
+        }else {Voyageur c = VoyageurRepository.findById(idVoyageur).get();}
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = voyageRepository.RechercheVoyage(nomGareDepart, nomGareDepart, heureDepart);
         System.out.println("taille" + lesvoyages.size());
