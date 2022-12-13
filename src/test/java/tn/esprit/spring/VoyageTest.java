@@ -69,4 +69,20 @@ public class VoyageTest {
         Mockito.verify(voyageRepository, times(1)).save(Mockito.any(Voyage.class));
         System.out.println("3");
     }
+
+    @Test
+    public void testDeleteVoyage(){
+        Voyage voyage1 = voyageService.recupererVoyageParId(66L);
+        voyageService.supprimerVoyage(voyage1);
+        Mockito.verify(voyageRepository, times(1)).deleteById(66L);
+        System.out.println("4");
+    }
+
+    @Test
+    public void testUpdateVoyage(){
+        Mockito.when(voyageRepository.save(v1)).thenReturn(v1);
+        voyageService.modifierVoyage(v1);
+        Mockito.verify(voyageRepository, times(1)).save(Mockito.any(Voyage.class));
+        System.out.println("5");
+    }
 }
