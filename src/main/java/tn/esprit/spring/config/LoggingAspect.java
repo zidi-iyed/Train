@@ -17,7 +17,6 @@ private static final Logger logger = LogManager.getLogger(LoggingAspect.class);
 @Before("execution(* tn.esprit.spring.service.*.set*(..))")
 public void logMethodEntry(JoinPoint joinPoint) {
 String name = joinPoint.getSignature().getName();
-logger.info("In method " + name + " : ");
 logger.info(concatenate("In method ", name));
 }
 	private static String concatenate(String value1, String value2) {
@@ -27,5 +26,5 @@ logger.info(concatenate("In method ", name));
 @After("execution(* tn.esprit.spring.service.*.set*(..))")
 public void logMethodExit(JoinPoint joinPoint) {
 	String name = joinPoint.getSignature().getName();
-	logger.info("Out of " + name );
+	logger.info(concatenate("Out of ", name));
 }}
