@@ -99,7 +99,7 @@ public class TrainServiceImpl implements ITrainService {
 
 
         System.out.println("taille test");
-        Optional<Voyage value = VoyageurRepository.findById(idVoyageur).get();
+        Optional<Voyageur> value = Optional.of(VoyageurRepository.findById(idVoyageur).get());
         if (value.isPresent()) {
             Voyageur c = VoyageurRepository.findById(idVoyageur).get();
         }
