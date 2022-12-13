@@ -27,28 +27,7 @@ public class RestControllerVoyageur {
     @Autowired
     IVoyageurService iVoyageurservice;
 
-    //http://localhost:8083/SpringMVC/servlet/ajouterVoyage
-    @PostMapping("/ajouterVoyage")
-    @ResponseBody
-    public void ajouterGare(Voyage voyage) {
-        ivoyageservice.ajouterVoyage(voyage);
-    }
-
-
-    ////http://localhost:8083/SpringMVC/servlet/ajouterTrain
-    @PostMapping("/ajouterTrain")
-    @ResponseBody
-    public void ajouterTrain(@RequestBody Train train) {
-        itrainservice.ajouterTrain(train);
-    }
-
-    ////http://localhost:8083/SpringMVC/servlet/ajouterVoyageur
-    @PostMapping("/ajouterVoyageur")
-    @ResponseBody
-    public void ajouterVoyageur(@RequestBody Voyageur voyageur) {
-        iVoyageurservice.ajouterVoyageur(voyageur);
-    }
-
+   
     @PutMapping(value = "/affecterTrainAVoyage/{idtr}/{idvyg}")
     //1 1  2 2 3 3 4 4
     public void affecterTrainAVoyage(@PathVariable("idtr") Long idTrain, @PathVariable("idvyg") Long idVoyage) {
