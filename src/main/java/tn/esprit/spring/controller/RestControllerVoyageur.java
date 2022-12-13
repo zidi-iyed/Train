@@ -30,7 +30,7 @@ public class RestControllerVoyageur {
     //http://localhost:8083/SpringMVC/servlet/ajouterVoyage
     @PostMapping("/ajouterVoyage")
     @ResponseBody
-    public void ajouterGare(@RequestBody Voyage voyage) {
+    public void ajouterGare(Voyage voyage) {
         ivoyageservice.ajouterVoyage(voyage);
     }
 
