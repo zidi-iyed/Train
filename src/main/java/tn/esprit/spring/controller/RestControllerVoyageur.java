@@ -27,7 +27,7 @@ public class RestControllerVoyageur {
     @Autowired
     IVoyageurService iVoyageurservice;
 
-   
+
     @PutMapping(value = "/affecterTrainAVoyage/{idtr}/{idvyg}")
     //1 1  2 2 3 3 4 4
     public void affecterTrainAVoyage(@PathVariable("idtr") Long idTrain, @PathVariable("idvyg") Long idVoyage) {

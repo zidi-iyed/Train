@@ -30,7 +30,7 @@ public class Voyageur implements Serializable{
 	}
 
 	@ManyToMany(mappedBy = "mesVoyageurs")
-    public List<Voyage> mesvoyages;
+    private List<Voyage> mesvoyages;
 
 	public Long getIdVoyageur() {
 		return idVoyageur;

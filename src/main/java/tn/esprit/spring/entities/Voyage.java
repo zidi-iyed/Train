@@ -55,7 +55,7 @@ public class Voyage  implements Serializable {
 	
 	
 	@ManyToMany
-    public List<Voyageur> mesVoyageurs;
+    private List<Voyageur> mesVoyageurs;
 
 
 	public long getCodeVoyage() {
