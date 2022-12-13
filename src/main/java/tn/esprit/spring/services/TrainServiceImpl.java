@@ -61,7 +61,9 @@ public class TrainServiceImpl implements ITrainService {
 
             }
         }
+        if(occ != 0)
         return cpt / occ;
+        else return 0;
     }
 
 
