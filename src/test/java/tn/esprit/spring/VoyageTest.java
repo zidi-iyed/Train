@@ -56,7 +56,7 @@ public class VoyageTest {
     @Test
     public void testRetrieveAllVoyages() {
         Mockito.when(voyageRepository.findAll()).thenReturn(voyageList);
-        List<Voyage> voyageList3 = voyageService.recupererAll()
+        List<Voyage> voyageList3 = voyageService.recupererAll();
         assertEquals(2, voyageList3.size());
         System.out.println("2");
     }
