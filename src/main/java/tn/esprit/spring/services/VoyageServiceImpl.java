@@ -35,6 +35,8 @@ public class VoyageServiceImpl implements IVoyageService {
         Train t = null;
         if(tOpt.isPresent()) {
             t = tOpt.get();
+        }else{
+            t = trainRepository.findById(idTrain).get();
         }
 
         Optional<Voyage> vOpt = voyageRepository.findById(idVoyage);
