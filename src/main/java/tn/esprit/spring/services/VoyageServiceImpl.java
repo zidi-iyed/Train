@@ -5,10 +5,12 @@ import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Train;
 import tn.esprit.spring.entities.Voyage;
+import tn.esprit.spring.entities.Voyageur;
 import tn.esprit.spring.repository.TrainRepository;
 import tn.esprit.spring.repository.VoyageRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VoyageServiceImpl implements IVoyageService {
@@ -29,8 +31,18 @@ public class VoyageServiceImpl implements IVoyageService {
 
     public void affecterTrainAVoyage(Long idTrain, Long idVoyage) {
 
-        Train t = trainRepository.findById(idTrain).get();
-        Voyage v = voyageRepository.findById(idVoyage).get();
+        Optional<Train> tOpt = trainRepository.findById(idTrain);
+        Train t = null;
+        if(tOpt.isPresent()) {
+            t = tOpt.get();
+        }
+
+        Optional<Voyage> vOpt = voyageRepository.findById(idVoyage);
+        Voyage v = null;
+        if(vOpt.isPresent()) {
+            v = vOpt.get();
+        }
+
         v.setTrain(t);
         voyageRepository.save(v);
     }
