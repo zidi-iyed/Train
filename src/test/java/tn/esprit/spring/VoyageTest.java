@@ -72,7 +72,7 @@ public class VoyageTest {
 
     @Test
     public void testDeleteVoyage(){
-        Voyage voyage1 = voyageService.recupererVoyageParId(66L);
+        Voyage voyage1 = v1;
         voyageService.supprimerVoyage(voyage1);
         Mockito.verify(voyageRepository, times(1)).deleteById(66L);
         System.out.println("4");
