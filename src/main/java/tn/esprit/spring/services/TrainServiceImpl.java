@@ -22,6 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.text.ParseException;
+import java.util.Optional;
 
 import org.springframework.scheduling.annotation.Scheduled;
 
@@ -98,7 +99,10 @@ public class TrainServiceImpl implements ITrainService {
 
 
         System.out.println("taille test");
-        Voyageur c = VoyageurRepository.findById(idVoyageur).get();
+        Optional<Voyage value = VoyageurRepository.findById(idVoyageur).get();
+        if (value.isPresent()) {
+            Voyageur c = VoyageurRepository.findById(idVoyageur).get();
+        }
         List<Voyage> lesvoyages = new ArrayList<>();
         lesvoyages = voyageRepository.RechercheVoyage(nomGareDepart, nomGareDepart, heureDepart);
         System.out.println("taille" + lesvoyages.size());
